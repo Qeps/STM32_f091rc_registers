@@ -1,0 +1,39 @@
+/**
+ ******************************************************************************
+ * @file    lis3mdl_conf.h
+ * @brief   Configuration and hardware bridge for LIS3MDL magnetometer.
+ *
+ * This file defines the interface between the LIS3MDL driver
+ * and the STM32L475 hardware on the B-L475E-IOT01A2 board.
+ *
+ * It replaces the generic "bus" definitions in lis3mdl.h
+ * with functions implemented in lis3mdl_conf.c.
+ * The purpose is to keep all sensor hardware configuration
+ * isolated from application logic (main.c).
+ ******************************************************************************
+ */
+
+#ifndef LIS3MDL_CONF_H
+#define LIS3MDL_CONF_H
+
+#include "lis3mdl.h"
+#include "b_l475e_iot01a2_bus.h"   // BSP bus layer for I2C/SPI access
+#include "stm32l4xx_hal.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Global LIS3MDL driver instance */
+extern LIS3MDL_Object_t lis3mdl;
+
+/* Initializes LIS3MDL communication and driver */
+void LIS3MDL_Platform_Init(void);
+
+/* Reads one sample of magnetic field and prints via UART */
+void LIS3MDL_Read_Magnetic(void);
+
+#ifdef __cplusplus
+}
+#endif
+#endif

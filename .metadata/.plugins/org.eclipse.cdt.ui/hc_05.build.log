@@ -1,0 +1,17 @@
+11:56:30 **** Incremental Build of configuration Debug for project hc_05 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F091xC -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "hc_05.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\hc_05\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hc_05.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: hc_05.elf
+ 
+arm-none-eabi-size  hc_05.elf 
+arm-none-eabi-objdump -h -S hc_05.elf  > "hc_05.list"
+   text	   data	    bss	    dec	    hex	filename
+  12436	     92	   2172	  14700	   396c	hc_05.elf
+Finished building: default.size.stdout
+ 
+Finished building: hc_05.list
+ 
+
+11:56:31 Build Finished. 0 errors, 0 warnings. (took 1s.43ms)
+

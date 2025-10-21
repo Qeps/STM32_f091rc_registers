@@ -1,0 +1,17 @@
+21:23:25 **** Incremental Build of configuration Debug for project WiFi_HTTP_Server ****
+make -j8 all 
+arm-none-eabi-gcc "C:/CUBEIDE_workspace/WiFi_HTTP_Server/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DUSE_STM32L475E_IOT01 -DSTM32L475xx -c -I../../Inc -I../../Common/Inc -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../../Drivers/STM32L4xx_HAL_Driver/Inc -I../../Drivers/BSP/B-L475E-IOT01 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Application/User/main.o"
+arm-none-eabi-gcc -o "WiFi_HTTP_Server.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\CUBEIDE_workspace\WiFi_HTTP_Server\STM32CubeIDE\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="WiFi_HTTP_Server.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: WiFi_HTTP_Server.elf
+ 
+arm-none-eabi-size  WiFi_HTTP_Server.elf 
+arm-none-eabi-objdump -h -S WiFi_HTTP_Server.elf  > "WiFi_HTTP_Server.list"
+   text	   data	    bss	    dec	    hex	filename
+  40676	    136	  97232	 138044	  21b3c	WiFi_HTTP_Server.elf
+Finished building: default.size.stdout
+ 
+Finished building: WiFi_HTTP_Server.list
+ 
+
+21:23:27 Build Finished. 0 errors, 0 warnings. (took 1s.404ms)
+

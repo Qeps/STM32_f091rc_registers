@@ -1,0 +1,35 @@
+23:13:24 **** Incremental Build of configuration Debug for project f091_GPIO_Output ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "f091_GPIO_Output.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_GPIO_Output\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_GPIO_Output.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f091_GPIO_Output.elf
+ 
+arm-none-eabi-size  f091_GPIO_Output.elf 
+arm-none-eabi-objdump -h -S f091_GPIO_Output.elf  > "f091_GPIO_Output.list"
+   text	   data	    bss	    dec	    hex	filename
+    600	      0	   1568	   2168	    878	f091_GPIO_Output.elf
+Finished building: default.size.stdout
+ 
+Finished building: f091_GPIO_Output.list
+ 
+23:14:13 **** Incremental Build of configuration Debug for project f091_GPIO_Output ****
+make -j8 all 
+arm-none-eabi-size  f091_GPIO_Output.elf 
+   text	   data	    bss	    dec	    hex	filename
+    600	      0	   1568	   2168	    878	f091_GPIO_Output.elf
+Finished building: default.size.stdout
+ 
+23:14:30 **** Incremental Build of configuration Debug for project f091_GPIO_Output ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "f091_GPIO_Output.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_GPIO_Output\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_GPIO_Output.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f091_GPIO_Output.elf
+ 
+arm-none-eabi-size  f091_GPIO_Output.elf 
+arm-none-eabi-objdump -h -S f091_GPIO_Output.elf  > "f091_GPIO_Output.list"
+   text	   data	    bss	    dec	    hex	filename
+    620	      0	   1568	   2188	    88c	f091_GPIO_Output.elf
+Finished building: default.size.stdout
+ 
+Finished building: f091_GPIO_Output.list
+ 

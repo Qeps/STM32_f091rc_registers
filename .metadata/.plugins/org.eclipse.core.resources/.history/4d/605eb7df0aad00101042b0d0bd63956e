@@ -1,0 +1,13 @@
+/*
+ * lsm6dsl_conf.h
+ *
+ *  Created on: Oct 19, 2025
+ *      Author: lenovo
+ */
+
+#ifndef INC_LSM6DSL_CONF_H_
+#define INC_LSM6DSL_CONF_H_
+
+
+
+#endif /* INC_LSM6DSL_CONF_H_ */

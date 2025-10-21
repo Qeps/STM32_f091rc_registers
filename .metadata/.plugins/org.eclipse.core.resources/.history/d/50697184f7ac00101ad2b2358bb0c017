@@ -1,0 +1,42 @@
+/**
+ ******************************************************************************
+ * @file    lis3mdl_platform.h
+ * @brief   Platform bridge between LIS3MDL driver and STM32 HAL/BSP.
+ *
+ * This file separates sensor driver logic (generic ST code)
+ * from STM32 hardware functions.
+ * It defines how the LIS3MDL driver will access I2C bus,
+ * delay functions, and system tick.
+ *
+ * Having this layer allows easy reuse of the LIS3MDL driver
+ * on different STM32 boards without rewriting the main code.
+ ******************************************************************************
+ */
+
+#ifndef LIS3MDL_PLATFORM_H
+#define LIS3MDL_PLATFORM_H
+
+#include "lis3mdl.h"                // ST sensor driver header
+#include "b_l475e_iot01a2_bus.h"   // BSP bus layer for I2C/SPI access
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Global LIS3MDL device object */
+extern LIS3MDL_Object_t lis3mdl;
+
+/**
+ * @brief Initializes bus connection (I2C2) between MCU and LIS3MDL.
+ *
+ * This function fills the LIS3MDL_IO_t structure with function pointers
+ * to the existing BSP I2C2 functions (read, write, delay, etc.).
+ * It then calls LIS3MDL_RegisterBusIO() to connect these functions
+ * to the LIS3MDL driver instance.
+ */
+void LIS3MDL_Platform_Init(void);
+
+#ifdef __cplusplus
+}
+#endif
+#endif

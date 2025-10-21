@@ -1,0 +1,13 @@
+/*
+ * lis3mdl_conf.h
+ *
+ *  Created on: Oct 19, 2025
+ *      Author: lenovo
+ */
+
+#ifndef INC_LIS3MDL_CONF_H_
+#define INC_LIS3MDL_CONF_H_
+
+
+
+#endif /* INC_LIS3MDL_CONF_H_ */

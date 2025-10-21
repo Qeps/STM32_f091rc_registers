@@ -1,0 +1,69 @@
+/**
+ ******************************************************************************
+ * @file    lis3mdl_conf.c
+ * @brief   Platform and readout layer for LIS3MDL.
+ *
+ * This file links the LIS3MDL driver with the STM32 hardware using BSP I2C2.
+ * It also provides a helper function to read magnetic data (X, Y, Z)
+ * and print it over UART for quick testing.
+ *
+ * This structure is used instead of writing sensor logic directly
+ * into main.c — keeping the project modular and clean.
+ ******************************************************************************
+ */
+#include <stdio.h>
+#include "lis3mdl_conf.h"
+
+/* Global driver object.
+ * Stores internal context, I2C address, and low-level access functions.
+ */
+LIS3MDL_Object_t lis3mdl;
+extern UART_HandleTypeDef huart1;
+
+
+/**
+ * @brief Initialize LIS3MDL I2C connection and register IO functions.
+ *
+ * This sets up the I2C2 bus using BSP drivers and connects it
+ * to the LIS3MDL high-level driver via LIS3MDL_RegisterBusIO().
+ */
+void LIS3MDL_Platform_Init(void)
+{
+    LIS3MDL_IO_t io_ctx;
+
+    io_ctx.Init    = BSP_I2C2_Init;
+    io_ctx.DeInit  = BSP_I2C2_DeInit;
+    io_ctx.BusType = LIS3MDL_I2C_BUS;
+    io_ctx.Address = LIS3MDL_I2C_ADD_H;         // 0x3D (8-bit I2C address)
+    io_ctx.WriteReg= BSP_I2C2_WriteReg;
+    io_ctx.ReadReg = BSP_I2C2_ReadReg;
+    io_ctx.GetTick = (LIS3MDL_GetTick_Func)HAL_GetTick;
+    io_ctx.Delay   = HAL_Delay;
+
+    /* Link the IO functions with the driver */
+    LIS3MDL_RegisterBusIO(&lis3mdl, &io_ctx);
+
+    /* Initialize and enable the magnetometer */
+    LIS3MDL_Init(&lis3mdl);
+    LIS3MDL_MAG_Enable(&lis3mdl);
+}
+
+/**
+ * @brief  Reads current magnetic field values (X, Y, Z) and prints them via UART.
+ *
+ * The function queries the LIS3MDL driver using LIS3MDL_MAG_GetAxes()
+ * and transmits formatted results through USART1.
+ * Used for simple data logging or debugging.
+ */
+void LIS3MDL_Read_Magnetic(void)
+{
+    LIS3MDL_Axes_t mag;
+    if (LIS3MDL_MAG_GetAxes(&lis3mdl, &mag) == LIS3MDL_OK)
+    {
+        char msg[64];
+        int len = snprintf(msg, sizeof(msg),
+                           "X: %ld  Y: %ld  Z: %ld\r\n",
+                           mag.x, mag.y, mag.z);
+        HAL_UART_Transmit(&huart1, (uint8_t*)msg, len, HAL_MAX_DELAY);
+    }
+}
