@@ -22,8 +22,8 @@
 // rejestr BSRR służy do bezpiecznej zmiany pojedynczych pinów – SET/RESET bez wpływu na resztę
 // BSRR jest preferowany do ustawiania stanu pinów w czasie działania programu
 // BRx - bit reset, BSx - bit set
-#define LD2_ON 		GPIOA->BSRR |= GPIO_BSRR_BS_5; //zapalenie diody, stan wysoki na setcie
-#define LD2_OFF 	GPIOA->BSRR |= GPIO_BSRR_BR_5; //gaszenie diody, stan wysoki na resetcie
+#define LD2_ON 		GPIOA->BSRR = GPIO_BSRR_BS_5; //zapalenie diody, stan wysoki na setcie
+#define LD2_OFF 	GPIOA->BSRR = GPIO_BSRR_BR_5; //gaszenie diody, stan wysoki na resetcie
 
 // PA5 LD2
 // Zegarami sterujemy w bloku RCC
