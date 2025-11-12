@@ -11,6 +11,7 @@
 #define CLK			  8000000
 static uint16_t compute_uart_baudrate(uint32_t periph_clk, uint32_t baudrate);
 static void uart_set_baudrate(uint32_t periph_clk, uint32_t baudrate);
+void uart2_send_char(int ch);
 
 void uart2_init(void){
 	// 1. Enable clock signal for GPIOA
@@ -40,11 +41,18 @@ void uart2_init(void){
 
 	// 8. Set transfer direction
 	USART2->CR1 = 0;
-	USART2->CR1 |= USART_CR1_TE; // Bit 2 RE: Receiver enable
-	USART2->CR1 |= USART_CR1_RE; // Bit 3 TE: Transmitter enable
+	USART2->CR1 |= USART_CR1_TE; // Bit 3: Transmitter enable
+	USART2->CR1 |= USART_CR1_RE; // Bit 2: Receiver enable
 
 	// 9. Enable UART module
 	USART2->CR1 |= USART_CR1_UE;
+}
+
+void uart2_send_char(int ch){
+	// 1. Transmit data register must be empty
+	while (!(USART2->ISR & USART_ISR_TXE));
+	// 2. Write to transmit data
+	USART2->TDR = (ch & 0xFF);
 }
 
 static uint16_t compute_uart_baudrate(uint32_t periph_clk, uint32_t baudrate){
