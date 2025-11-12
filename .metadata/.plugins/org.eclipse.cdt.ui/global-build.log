@@ -1,124 +1,14 @@
-23:13:24 **** Incremental Build of configuration Debug for project f091_GPIO_Output ****
+19:06:42 **** Incremental Build of configuration Debug for project f091_uart ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "f091_GPIO_Output.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_GPIO_Output\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_GPIO_Output.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_GPIO_Output.elf
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "f091_uart.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_uart\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f091_uart.elf
  
-arm-none-eabi-size  f091_GPIO_Output.elf 
-arm-none-eabi-objdump -h -S f091_GPIO_Output.elf  > "f091_GPIO_Output.list"
+arm-none-eabi-size  f091_uart.elf 
+arm-none-eabi-objdump -h -S f091_uart.elf  > "f091_uart.list"
    text	   data	    bss	    dec	    hex	filename
-    600	      0	   1568	   2168	    878	f091_GPIO_Output.elf
+   4848	     92	   1900	   6840	   1ab8	f091_uart.elf
 Finished building: default.size.stdout
  
-Finished building: f091_GPIO_Output.list
- 
-23:14:13 **** Incremental Build of configuration Debug for project f091_GPIO_Output ****
-make -j8 all 
-arm-none-eabi-size  f091_GPIO_Output.elf 
-   text	   data	    bss	    dec	    hex	filename
-    600	      0	   1568	   2168	    878	f091_GPIO_Output.elf
-Finished building: default.size.stdout
- 
-23:14:30 **** Incremental Build of configuration Debug for project f091_GPIO_Output ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "f091_GPIO_Output.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_GPIO_Output\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_GPIO_Output.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_GPIO_Output.elf
- 
-arm-none-eabi-size  f091_GPIO_Output.elf 
-arm-none-eabi-objdump -h -S f091_GPIO_Output.elf  > "f091_GPIO_Output.list"
-   text	   data	    bss	    dec	    hex	filename
-    620	      0	   1568	   2188	    88c	f091_GPIO_Output.elf
-Finished building: default.size.stdout
- 
-Finished building: f091_GPIO_Output.list
- 
-17:15:52 **** Build of configuration Debug for project f091_SysTick ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:38:17: error: too many arguments to function 'Delay'
-   38 |                 Delay(1000);
-      |                 ^~~~~
-../Src/main.c:24:6: note: declared here
-   24 | void Delay(void);
-      |      ^~~~~
-../Src/main.c: At top level:
-../Src/main.c:56:6: error: conflicting types for 'Delay'; have 'void(uint32_t)' {aka 'void(long unsigned int)'}
-   56 | void Delay(uint32_t Delay_ms){
-      |      ^~~~~
-../Src/main.c:24:6: note: previous declaration of 'Delay' with type 'void(void)'
-   24 | void Delay(void);
-      |      ^~~~~
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-17:16:19 **** Incremental Build of configuration Debug for project f091_SysTick ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "f091_SysTick.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_SysTick\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_SysTick.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_SysTick.elf
- 
-arm-none-eabi-size  f091_SysTick.elf 
-arm-none-eabi-objdump -h -S f091_SysTick.elf  > "f091_SysTick.list"
-   text	   data	    bss	    dec	    hex	filename
-   1000	      0	   1568	   2568	    a08	f091_SysTick.elf
-Finished building: default.size.stdout
- 
-Finished building: f091_SysTick.list
- 
-17:16:44 **** Incremental Build of configuration Debug for project f091_SysTick ****
-make -j8 all 
-arm-none-eabi-size  f091_SysTick.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1000	      0	   1568	   2568	    a08	f091_SysTick.elf
-Finished building: default.size.stdout
- 
-17:17:24 **** Incremental Build of configuration Debug for project f091_SysTick ****
-make -j8 all 
-arm-none-eabi-size  f091_SysTick.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1000	      0	   1568	   2568	    a08	f091_SysTick.elf
-Finished building: default.size.stdout
- 
-17:17:52 **** Incremental Build of configuration Debug for project f091_SysTick ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "f091_SysTick.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_SysTick\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_SysTick.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_SysTick.elf
- 
-arm-none-eabi-size  f091_SysTick.elf 
-arm-none-eabi-objdump -h -S f091_SysTick.elf  > "f091_SysTick.list"
-   text	   data	    bss	    dec	    hex	filename
-   1008	      0	   1568	   2576	    a10	f091_SysTick.elf
-Finished building: default.size.stdout
- 
-Finished building: f091_SysTick.list
- 
-17:18:20 **** Incremental Build of configuration Debug for project f091_SysTick ****
-make -j8 all 
-arm-none-eabi-size  f091_SysTick.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1008	      0	   1568	   2576	    a10	f091_SysTick.elf
-Finished building: default.size.stdout
- 
-17:18:58 **** Incremental Build of configuration Debug for project f091_SysTick ****
-make -j8 all 
-arm-none-eabi-size  f091_SysTick.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1008	      0	   1568	   2576	    a10	f091_SysTick.elf
-Finished building: default.size.stdout
- 
-17:20:50 **** Incremental Build of configuration Debug for project f091_SysTick ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "f091_SysTick.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_SysTick\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_SysTick.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_SysTick.elf
- 
-arm-none-eabi-size  f091_SysTick.elf 
-arm-none-eabi-objdump -h -S f091_SysTick.elf  > "f091_SysTick.list"
-   text	   data	    bss	    dec	    hex	filename
-    992	      0	   1568	   2560	    a00	f091_SysTick.elf
-Finished building: default.size.stdout
- 
-Finished building: f091_SysTick.list
+Finished building: f091_uart.list
  

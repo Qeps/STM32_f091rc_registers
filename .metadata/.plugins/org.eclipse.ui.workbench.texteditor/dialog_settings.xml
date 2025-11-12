@@ -3,6 +3,7 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="systick"/>
 		<item value="stateManager"/>
 	</list>
 	<list key="replacehistory">
