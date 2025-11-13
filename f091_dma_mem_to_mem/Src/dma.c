@@ -6,6 +6,8 @@
  */
 #include "dma.h"
 
+void dma1_ch1_mem2mem_transfer_start(uint32_t src_buf, uint32_t dest_buf, uint32_t len);
+
 void dma1_ch1_mem2mem_init(){
 	//1. Enable clock on AHBNER for DMA1, bit 0
 	RCC->AHBENR |= RCC_AHBENR_DMA1EN;

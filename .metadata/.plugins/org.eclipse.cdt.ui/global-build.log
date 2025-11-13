@@ -1,64 +1,90 @@
-22:08:33 **** Incremental Build of configuration Debug for project f091_uart ****
+18:50:59 **** Incremental Build of configuration Debug for project f091_dma_mem_to_mem ****
+make -j8 all 
+arm-none-eabi-size  f091_dma_mem_to_mem.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4136	    100	   1924	   6160	   1810	f091_dma_mem_to_mem.elf
+Finished building: default.size.stdout
+ 
+18:52:04 **** Incremental Build of configuration Debug for project f091_dma_mem_to_mem ****
+make -j8 all 
+arm-none-eabi-size  f091_dma_mem_to_mem.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4136	    100	   1924	   6160	   1810	f091_dma_mem_to_mem.elf
+Finished building: default.size.stdout
+ 
+18:55:44 **** Incremental Build of configuration Debug for project f091_dma_mem_to_mem ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "f091_uart.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_uart\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_uart.elf
+arm-none-eabi-gcc -o "f091_dma_mem_to_mem.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_dma_mem_to_mem\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_dma_mem_to_mem.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f091_dma_mem_to_mem.elf
  
-arm-none-eabi-size  f091_uart.elf 
-arm-none-eabi-objdump -h -S f091_uart.elf  > "f091_uart.list"
+arm-none-eabi-size  f091_dma_mem_to_mem.elf 
+arm-none-eabi-objdump -h -S f091_dma_mem_to_mem.elf  > "f091_dma_mem_to_mem.list"
    text	   data	    bss	    dec	    hex	filename
-   1128	      0	   1568	   2696	    a88	f091_uart.elf
+   4136	    100	   1924	   6160	   1810	f091_dma_mem_to_mem.elf
 Finished building: default.size.stdout
  
-Finished building: f091_uart.list
+Finished building: f091_dma_mem_to_mem.list
  
-22:09:48 **** Incremental Build of configuration Debug for project f091_uart ****
+18:58:51 **** Incremental Build of configuration Debug for project f091_dma_mem_to_mem ****
 make -j8 all 
-arm-none-eabi-size  f091_uart.elf 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:22:37: warning: format '%ld' expects argument of type 'long int', but argument 3 has type 'int' [-Wformat=]
+   22 |             int n = sprintf(buf, "%ld", test_data_arr[i]);
+      |                                   ~~^   ~~~~~~~~~~~~~~~~
+      |                                     |                |
+      |                                     long int         int
+      |                                   %d
+../Src/main.c:30:37: warning: format '%ld' expects argument of type 'long int', but argument 3 has type 'int' [-Wformat=]
+   30 |             int n = sprintf(buf, "%ld", test_dest_arr[i]);
+      |                                   ~~^   ~~~~~~~~~~~~~~~~
+      |                                     |                |
+      |                                     long int         int
+      |                                   %d
+arm-none-eabi-gcc -o "f091_dma_mem_to_mem.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_dma_mem_to_mem\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_dma_mem_to_mem.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f091_dma_mem_to_mem.elf
+ 
+arm-none-eabi-size  f091_dma_mem_to_mem.elf 
+arm-none-eabi-objdump -h -S f091_dma_mem_to_mem.elf  > "f091_dma_mem_to_mem.list"
    text	   data	    bss	    dec	    hex	filename
-   1128	      0	   1568	   2696	    a88	f091_uart.elf
+   4140	     92	   1908	   6140	   17fc	f091_dma_mem_to_mem.elf
 Finished building: default.size.stdout
  
-22:15:52 **** Incremental Build of configuration Debug for project f091_uart ****
+Finished building: f091_dma_mem_to_mem.list
+ 
+18:59:11 **** Incremental Build of configuration Debug for project f091_dma_mem_to_mem ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "f091_uart.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_uart\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_uart.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:30:37: warning: format '%ld' expects argument of type 'long int', but argument 3 has type 'int' [-Wformat=]
+   30 |             int n = sprintf(buf, "%ld", test_dest_arr[i]);
+      |                                   ~~^   ~~~~~~~~~~~~~~~~
+      |                                     |                |
+      |                                     long int         int
+      |                                   %d
+arm-none-eabi-gcc -o "f091_dma_mem_to_mem.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_dma_mem_to_mem\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_dma_mem_to_mem.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f091_dma_mem_to_mem.elf
  
-arm-none-eabi-size  f091_uart.elf 
-arm-none-eabi-objdump -h -S f091_uart.elf  > "f091_uart.list"
+arm-none-eabi-size  f091_dma_mem_to_mem.elf 
+arm-none-eabi-objdump -h -S f091_dma_mem_to_mem.elf  > "f091_dma_mem_to_mem.list"
    text	   data	    bss	    dec	    hex	filename
-   1128	      0	   1568	   2696	    a88	f091_uart.elf
+   4148	     92	   1908	   6148	   1804	f091_dma_mem_to_mem.elf
 Finished building: default.size.stdout
  
-Finished building: f091_uart.list
+Finished building: f091_dma_mem_to_mem.list
  
-22:16:48 **** Incremental Build of configuration Debug for project f091_uart ****
+18:59:25 **** Incremental Build of configuration Debug for project f091_dma_mem_to_mem ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "f091_uart.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_uart\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_uart.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "f091_dma_mem_to_mem.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_dma_mem_to_mem\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_dma_mem_to_mem.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f091_dma_mem_to_mem.elf
  
-arm-none-eabi-size  f091_uart.elf 
-arm-none-eabi-objdump -h -S f091_uart.elf  > "f091_uart.list"
+arm-none-eabi-size  f091_dma_mem_to_mem.elf 
+arm-none-eabi-objdump -h -S f091_dma_mem_to_mem.elf  > "f091_dma_mem_to_mem.list"
    text	   data	    bss	    dec	    hex	filename
-   1128	      0	   1568	   2696	    a88	f091_uart.elf
+   4140	     92	   1908	   6140	   17fc	f091_dma_mem_to_mem.elf
 Finished building: default.size.stdout
  
-Finished building: f091_uart.list
- 
-22:17:11 **** Incremental Build of configuration Debug for project f091_uart ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "f091_uart.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_uart\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: f091_uart.elf
- 
-arm-none-eabi-size  f091_uart.elf 
-arm-none-eabi-objdump -h -S f091_uart.elf  > "f091_uart.list"
-   text	   data	    bss	    dec	    hex	filename
-   1128	      0	   1568	   2696	    a88	f091_uart.elf
-Finished building: default.size.stdout
- 
-Finished building: f091_uart.list
+Finished building: f091_dma_mem_to_mem.list
  
