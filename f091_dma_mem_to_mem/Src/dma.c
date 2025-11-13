@@ -6,7 +6,7 @@
  */
 #include "dma.h"
 
-void dma1_MEM2MEM_init(){
+void dma1_ch1_mem2mem_init(){
 	//1. Enable clock on AHBNER for DMA1, bit 0
 	RCC->AHBENR |= RCC_AHBENR_DMA1EN;
 
@@ -47,4 +47,21 @@ void dma1_MEM2MEM_init(){
 
 	//4. Enable DMA interrupt in NVIC
 	NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+}
+
+void dma1_ch1_mem2mem_transfer_start(uint32_t src_buf, uint32_t dest_buf, uint32_t len){
+	//1. Set peripheral address
+	DMA1_Channel1->CPAR = src_buf;
+
+	//2. Set memory address
+	DMA1_Channel1->CMAR = dest_buf;
+
+	//3. Set transfer length
+	DMA1_Channel1->CNDTR = len;
+
+	//4. Set direction from peripheral (CPAR) to memory (CMAR)
+	DMA1_Channel1->CCR &= ~DMA_CCR_DIR;
+
+	//5. Enable DMA1 channel 1
+	DMA1_Channel1->CCR |= DMA_CCR_EN;
 }
