@@ -1,4 +1,33 @@
-20:02:37 **** Incremental Build of configuration Debug for project f091_ADC_DMA ****
+20:45:41 **** Incremental Build of configuration Debug for project f091_ADC_DMA ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "f091_ADC_DMA.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_ADC_DMA\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_ADC_DMA.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f091_ADC_DMA.elf
+ 
+arm-none-eabi-size  f091_ADC_DMA.elf 
+arm-none-eabi-objdump -h -S f091_ADC_DMA.elf  > "f091_ADC_DMA.list"
+   text	   data	    bss	    dec	    hex	filename
+   1988	      4	   1580	   3572	    df4	f091_ADC_DMA.elf
+Finished building: default.size.stdout
+ 
+Finished building: f091_ADC_DMA.list
+ 
+20:46:14 **** Incremental Build of configuration Debug for project f091_ADC_DMA ****
+make -j8 all 
+arm-none-eabi-size  f091_ADC_DMA.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1988	      4	   1580	   3572	    df4	f091_ADC_DMA.elf
+Finished building: default.size.stdout
+ 
+20:50:15 **** Incremental Build of configuration Debug for project f091_ADC_DMA ****
+make -j8 all 
+arm-none-eabi-size  f091_ADC_DMA.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1988	      4	   1580	   3572	    df4	f091_ADC_DMA.elf
+Finished building: default.size.stdout
+ 
+20:52:27 **** Incremental Build of configuration Debug for project f091_ADC_DMA ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F091xC -DSTM32F091RCTx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/adc.o"
 arm-none-eabi-gcc -o "f091_ADC_DMA.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\CUBEIDE_workspace\f091_ADC_DMA\STM32F091RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f091_ADC_DMA.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,7 +36,7 @@ Finished building target: f091_ADC_DMA.elf
 arm-none-eabi-size  f091_ADC_DMA.elf 
 arm-none-eabi-objdump -h -S f091_ADC_DMA.elf  > "f091_ADC_DMA.list"
    text	   data	    bss	    dec	    hex	filename
-   1076	      0	   1568	   2644	    a54	f091_ADC_DMA.elf
+   2000	      4	   1580	   3584	    e00	f091_ADC_DMA.elf
 Finished building: default.size.stdout
  
 Finished building: f091_ADC_DMA.list

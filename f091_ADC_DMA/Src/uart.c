@@ -63,4 +63,31 @@ static void uart_set_baudrate(uint32_t periph_clk, uint32_t baudrate){
 	USART2->BRR = compute_uart_baudrate(periph_clk, baudrate);
 }
 
+void uart2_send_string(const char *s)
+{
+    while (*s) {
+        uart2_send_char(*s++);
+    }
+}
+
+void uart2_send_u16(uint16_t v)
+{
+    char buf[6];          // max “65535”
+    int p = 0;
+
+    if (v == 0) {
+        uart2_send_char('0');
+        return;
+    }
+
+    while (v > 0) {
+        buf[p++] = '0' + (v % 10);
+        v /= 10;
+    }
+
+    while (p--) {
+        uart2_send_char(buf[p]);
+    }
+}
+
 

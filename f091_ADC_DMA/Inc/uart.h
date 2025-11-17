@@ -13,5 +13,7 @@
 
 void uart2_init(void);
 void uart2_send_char(int ch);
+void uart2_send_string(const char *s);
+void uart2_send_u16(uint16_t v);
 
 #endif /* UART_H_ */
